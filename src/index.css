@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.logo {
+  display: block;
+  width: 90px;
+  height: 70px; 
+  margin: 0 auto ; 
+  margin-left: 40px;
+}
+.carousel {
+  width: 100%;
+  margin: auto;
+}
+.carousel-item img{
+  height: 700px;
+}
+footer {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px 0;
+}
+.logo {
+  max-width: 100px;
+  height: auto;
+}
+.row {
+  margin: 0;
+}
+.col {
+  padding: 0;
+}
+.b, .z {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.nav-link{
+  font-size: 20px;
+}
+.card img{
+  height: 300px;
+}
+.a {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.m-auto {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .col {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
