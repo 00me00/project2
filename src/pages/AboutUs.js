@@ -1,9 +1,17 @@
 import React from 'react'
+import Card from '../component/Card';
 import image1 from '../assets/design1.jpg'
 import image2 from '../assets/design2.jpg'
 import image3 from '../assets/design3.jpg'
 
 const AboutUs = () => {
+  const products=[
+    {"id":1,"name":"product1","price":1200,"img":"/assets/1.jpg"},
+    {"id":2,"name":"product2","price":2200,"img":"/assets/2.jpg"},
+    {"id":3,"name":"product3","price":10200,"img":"/assets/3.jpg"},
+    {"id":4,"name":"product4","price":70200,"img":"/assets/design1.jpg"}
+  ]
+ 
   return (
    <>
    <div id="carouselExample" className="carousel slide">
@@ -27,6 +35,17 @@ const AboutUs = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
+<h1 className='Title'style={{padding:'20px'}}>More Features</h1>
+<div className='row'>
+{
+  products.map((product)=>(
+   
+    <Card key={product.id} product={product}/>
+   
+  ))
+}
+</div>
+
    </>
   )
 }
