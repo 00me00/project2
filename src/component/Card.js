@@ -1,9 +1,12 @@
 import React from 'react'
+import { useCart } from './context/CartContext'
 // import img1 from '../assets/1.jpg'
 // import img2 from '../assets/2.jpg'
 // import img3 from '../assets/3.jpg'
 
 const Card = ({product}) => {
+  const {addtoCart,cartList}=useCart()
+  
 // console.log(product)
 const{name,price,img}=product
   // const[data,setData]=useState([
@@ -11,6 +14,10 @@ const{name,price,img}=product
   //   {id:2,name:'Sofa',img:img2},
   //   {id:3,name:'Stairs',img:img3}
   // ])
+  function handleAdd(){
+    addtoCart(product)
+    console.log(cartList)
+  }
   return (
     <>
      <div className="col-md-4">
@@ -19,7 +26,7 @@ const{name,price,img}=product
        <div className="card-body">
          <h5 className="card-title">{name}</h5>
          <p>{price}</p>
-         <button className='btn btn-primary'>Add</button>
+         <button className='btn btn-primary' onClick={handleAdd}>Add</button>
        </div>
      </div>
    </div>

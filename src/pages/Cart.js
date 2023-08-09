@@ -1,7 +1,10 @@
 import React from 'react'
 import { CartItem } from '../component'
+import { useCart } from '../component/context/CartContext'
 
 const Cart = () => {
+  const {total}=useCart()
+  console.log(total)
     const products=[
         {"id":1,"name":"Product1","price":1200,"img":"/assets/1.jpg"},
         {"id":2,"name":"Product2","price":2200,"img":"/assets/2.jpg"}
