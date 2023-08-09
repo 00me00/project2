@@ -14,10 +14,10 @@ const{name,price,img}=product
   //   {id:2,name:'Sofa',img:img2},
   //   {id:3,name:'Stairs',img:img3}
   // ])
-  function handleAdd(){
-    addtoCart(product)
-    console.log(cartList)
-  }
+  // function handleAdd(){
+  //   addtoCart(product)
+  //   // console.log(cartList)
+  // }
   return (
     <>
      <div className="col-md-4">
@@ -26,7 +26,7 @@ const{name,price,img}=product
        <div className="card-body">
          <h5 className="card-title">{name}</h5>
          <p>{price}</p>
-         <button className='btn btn-primary' onClick={handleAdd}>Add</button>
+         <button className='btn btn-primary' onClick={()=>addtoCart(product)}>Add</button>
        </div>
      </div>
    </div>
