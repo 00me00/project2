@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCart } from './context/CartContext'
 // import img1 from '../assets/1.jpg'
 // import img2 from '../assets/2.jpg'
 // import img3 from '../assets/3.jpg'
 
 const Card = ({product}) => {
-  const {addtoCart,cartList}=useCart()
+  const {addtoCart,cartList,removeFromCart}=useCart()
+  const [isinCart,setIsinCart]=useState(false)
   
 // console.log(product)
-const{name,price,img}=product
+const{id,name,price,img}=product
   // const[data,setData]=useState([
   //   {id:1,name:'Furniture',img:img1},
   //   {id:2,name:'Sofa',img:img2},
@@ -18,6 +19,15 @@ const{name,price,img}=product
   //   addtoCart(product)
   //   // console.log(cartList)
   // }
+  useEffect(()=>{
+    const productIsinCart=cartList.find(item => item.id===id)
+    if(productIsinCart){
+      setIsinCart(true)
+    }
+    else{
+      setIsinCart(false)
+    }
+  },[id,cartList])
   return (
     <>
      <div className="col-md-4">
@@ -26,7 +36,10 @@ const{name,price,img}=product
        <div className="card-body">
          <h5 className="card-title">{name}</h5>
          <p>{price}</p>
-         <button className='btn btn-primary' onClick={()=>addtoCart(product)}>Add</button>
+         {isinCart? ( <button className='btn btn-danger' onClick={()=>removeFromCart(product)}>Remove</button>
+         ):( 
+         <button className='btn btn-primary' onClick={()=>addtoCart(product)}>Add</button>) }
+        
        </div>
      </div>
    </div>
