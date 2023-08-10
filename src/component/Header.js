@@ -1,8 +1,10 @@
 import React from 'react'
 import logo from '../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom'
+import { useCart } from './context/CartContext'
 
 const Header = () => {
+  const {cartList}=useCart()
   return (
     <header>
      <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,6 +30,10 @@ const Header = () => {
           <NavLink className="nav-link" to="/contactus">Contact Us</NavLink>
         </li>
         </ul>
+        {/* <li className="nav-item">
+          <span className="nav-link" to="/">Count:{cartList.length}</span>
+        </li> */}
+         <span className="nav-link" style={{marginRight:'60px'}} to="/">Count:{cartList.length}</span>
       </div>
       </div>
         </nav>
